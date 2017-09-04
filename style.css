@@ -1,0 +1,27 @@
+body {
+	width: 100%;
+	margin-left: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	font-size: 14px;
+	font-family: "Arial";
+	color: #0F0E0E;
+}
+
+.navigation {
+	line-height: 1.2;
+	text-align: left;
+	padding-left: 150px;	
+	padding-bottom: 15px;
+	padding-top: 5px;
+	font-weight: lighter;
+}	
+
+.header {
+	font-size: 14px;
+	font-family: "Arial";
+	color: rgba(0, 0, 0, 90);
+	padding-right: 40px;
+	text-decoration: none;
+}
+
