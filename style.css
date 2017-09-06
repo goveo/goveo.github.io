@@ -6,7 +6,7 @@ body {
 	padding-bottom: 0;
 	font-size: 14px;
 	font-family: "Arial";
-	color: #0F0E0E;
+	color: rgb(52, 52, 52);
 }
 
 .navigation {
@@ -16,7 +16,7 @@ body {
 	padding-bottom: 10px;
 	padding-top: 10px;
 	font-weight: lighter;
-	background-color: rgba(162, 183, 255, 0.33);
+	background-color: rgb(52, 52, 52);
 }	
 
 .header {
@@ -26,6 +26,7 @@ body {
 	padding-right: 40px;
 	margin: 0;
 	text-decoration: none;
+	color: rgba(255, 255, 255, 0.92);
 }
 
 .about {
@@ -34,13 +35,17 @@ body {
 	font-weight: lighter;
 }
 
-#avatar {
-	border-radius: 1000px; /*make circle*/
-	box-shadow: 0 0 15px #666; 
-	margin-top: 10px; 
+#info {
+	margin-top: 10px;
+	margin-bottom: 150px;
 }
 
-#usertext {
+#infoavatar {
+	border-radius: 1000px; /*make circle*/
+	box-shadow: 0 0 15px #666; 
+}
+
+#infotext {
 	text-align: left;
 	padding-left: 300px;	
 	margin-top: -200px;
@@ -51,6 +56,21 @@ footer {
 	width: 100%;
 	height: 170px;
 	background: #1e1b1c;
-	color: black;
+	color: rgba(255, 255, 255, 0.78);
 	overflow: hidden;
+	margin-top: 100px;
+}
+
+ #contacts {
+	width: 300px;
+	padding-left: 150px;
+	padding-top: 30px;
+	overflow: hidden;	 
+}
+
+.contact {
+	padding-bottom: 10px;
+}
+.space {
+	padding-right: 10px;
 }
