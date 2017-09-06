@@ -34,18 +34,19 @@ body {
 
 #info {
 	padding-top: 75px;
-	height: 270px;
+	height: 300px;
 }
 
 #infoavatar {
 	border-radius: 1000px; /*make circle*/
 	box-shadow: 0 0 15px #666; 
-	margin-left: 100px;
+	margin-left: 120px;
+	padding: 10px;
 }
 
 #infotext {
 	text-align: left;
-	padding-left: 400px;	
+	padding-left: 425px;	
 	margin-top: -200px;
 	font-weight: lighter;
 }
@@ -57,15 +58,23 @@ body {
 }
 
 #interests {
-	padding-left: 750px;
-	margin-top: -75px;
+	padding-left: 700px;
+	margin-top: -125px;
+	margin-left: 50px;
 	font-weight: lighter;
 	line-height: 2;
 	text-align: left;
+	font-size: 17px;
 }
 
 #about {
-	padding: 100px;
+	
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 100px;
+	padding-right: 100px;
+	
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 footer {
