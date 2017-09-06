@@ -98,3 +98,7 @@ footer {
 .space {
 	padding-right: 10px;
 }
+
+a:hover {
+	color: #7FC7FF;
+}
