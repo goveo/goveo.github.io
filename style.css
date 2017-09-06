@@ -56,6 +56,14 @@ body {
 	font-weight: lighter;
 }
 
+#interests {
+	padding-left: 750px;
+	margin-top: -75px;
+	font-weight: lighter;
+	line-height: 2;
+	text-align: left;
+}
+
 #about {
 	padding: 100px;
 }
@@ -70,7 +78,7 @@ footer {
 
  #contacts {
 	width: 300px;
-	padding-left: 150px;
+	padding-left: 100px;
 	padding-top: 30px;
 	overflow: hidden;	 
 }
