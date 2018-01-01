@@ -16,39 +16,30 @@
 </head>
 
 <body>
-    <div id="app">
-        <header>
-            <button class="ui icon button" @click="show = !show">
-                <div v-if="show">
-                    <i class="medium chevron left icon"></i>
-                </div>
-                <div v-else>
-                    <i class="medium sidebar icon"></i>
-                </div>
-
-            </button>
-        </header>
-
-        <transition name="slide">
-            <aside v-show="show">
-                <a href="#about">
-                    <h2 class="center">About</h2>
-                </a>
-                <a href="#programming">
-                    <h2 class="center">Programming</h2>
-                </a>
-                <a href="#interests">
-                    <h2 class="center">Interests</h2>
-                </a>
-                <a href="#contacts">
-                    <h2 class="center">Contacts</h2>
-                </a>
-            </aside>
-        </transition>
-
-        <div class="ui grid">
-            
-            <main class="ui container" v-bind:class="{ 'ten wide center middle aligned column': show }">
+    <div class="ui top attached demo menu">
+        <a class="item">
+            <i class="sidebar icon"></i> Menu
+        </a>
+    </div>
+    <div class="ui bottom attached segment">
+        <div class="ui sidebar inverted vertical menu">
+            <!-- SIDEBAR ELEMENTS -->
+            <a class="item" href="#about">
+                <h2 class="center">About</h2>
+            </a>
+            <a class="item" href="#programming">
+                <h2 class="center">Programming</h2>
+            </a>
+            <a class="item" href="#interests">
+                <h2 class="center">Interests</h2>
+            </a>
+            <a class="item" href="#contacts">
+                <h2 class="center">Contacts</h2>
+            </a>
+        </div>
+        <div class="pusher">
+            <!-- SITE CONTENT -->
+            <main class="container">
                 <div id="about" class="center block">
                     <div class="ui center aligned grid">
                         <div class="six wide center aligned column">
@@ -92,23 +83,119 @@
                     </div>
                 </div>
                 <div class="ui divider"></div>
-            </main>
 
-            <footer class="block">
-                <div class="ui container">
-                    <h1 class="ui header">Contacts</h1>
-                    <div class="align-left">
-                        <i class="big telegram icon"></i>
+                <footer class="block">
+                    <div class="ui container">
+                        <h1 class="ui header">Contacts</h1>
+                        <div class="align-left">
+                            <i class="big telegram icon"></i>
+                        </div>
+                        <div>
+                            <h3>@goveo</h3>
+                        </div>
                     </div>
-                    <div>
-                        <h3>@goveo</h3>
-                    </div>
-                </div>
-            </footer>
+                </footer>
+            </main>
         </div>
     </div>
 
-    <script src="model.js"></script>
+    <!-- <div id="app">
+        <header>
+            <button class="ui icon button" @click="show = !show">
+                <div v-if="show">
+                    <i class="medium chevron left icon"></i>
+                </div>
+                <div v-else>
+                    <i class="medium sidebar icon"></i>
+                </div>
+
+            </button>
+        </header>
+
+       <div class="ui grid">
+
+            <div v-bind:class="{ 'twelve wide center aligned column': show, 'sixteen wide center aligned column': !show}">
+                <main class="container">
+                    <div id="about" class="center block">
+                        <div class="ui center aligned grid">
+                            <div class="six wide center aligned column">
+                                <img class="ui centered medium circular image" src="src/patau.jpg">
+                            </div>
+                            <div class="ten wide center middle aligned column">
+                                <h1>Yury Brusentsov</h1>
+                                <h4>Professional patau</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui divider"></div>
+
+                    <div id="interests" class="center block">
+                        <div class="ui center aligned grid">
+                            <div class="sixteen wide center aligned column">
+                                <h1>My interests</h1>
+                            </div>
+
+                            <div class="six wide center aligned column">
+                                <i class="huge code icon"></i>
+                            </div>
+                            <div class="ten wide center middle aligned column">
+                                <h2>Programming</h2>
+                            </div>
+
+                            <div class="six wide center aligned column">
+                                <i class="huge game icon"></i>
+                            </div>
+                            <div class="ten wide center middle aligned column">
+                                <h2>Computer games</h2>
+                            </div>
+
+                            <div class="six wide center aligned column">
+                                <i class="ion-beer"></i>
+                            </div>
+                            <div class="ten wide center middle aligned column">
+                                <h2>Beer</h2>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="ui divider"></div>
+
+                    <footer class="block">
+                        <div class="ui container">
+                            <h1 class="ui header">Contacts</h1>
+                            <div class="align-left">
+                                <i class="big telegram icon"></i>
+                            </div>
+                            <div>
+                                <h3>@goveo</h3>
+                            </div>
+                        </div>
+                    </footer>
+                </main>
+            </div>
+
+            <transition name="slide">
+                <aside class="four wide center aligned column" v-show="show">
+                    <a href="#about">
+                        <h2 class="center">About</h2>
+                    </a>
+                    <a href="#programming">
+                        <h2 class="center">Programming</h2>
+                    </a>
+                    <a href="#interests">
+                        <h2 class="center">Interests</h2>
+                    </a>
+                    <a href="#contacts">
+                        <h2 class="center">Contacts</h2>
+                    </a>
+                </aside>
+            </transition>
+
+        </div>
+    </div>
+
+    <script src="model.js"></script> -->
+    <script src="main.js"></script>
 </body>
 
 </html>
