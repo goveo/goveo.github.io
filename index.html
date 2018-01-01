@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
     <title>Yury Brusentsov</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
@@ -9,30 +10,56 @@
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js'></script>
-    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
 </head>
 
 <body>
     <div id="app">
         <header>
-            <button @click="show = !show">
-                <i class="ion-navicon"></i>
+            <button class="ui icon button" @click="show = !show">
+                <div v-if="show">
+                    <i class="chevron left icon"></i>
+                </div>
+                <div v-else>
+                    <i class="sidebar icon"></i>
+                </div>
+
             </button>
         </header>
 
         <transition name="slide">
             <aside v-show="show">
-                <a href="#about"><h2 class="center">About</h2></a>
-                <a href="#programming"><h2 class="center">Programming</h2></a>
-                <a href="#interests"><h2 class="center">Interests</h2></a>
-                <a href="#contacts"><h2 class="center">Contacts</h2></a>
+                <a href="#about">
+                    <h2 class="center">About</h2>
+                </a>
+                <a href="#programming">
+                    <h2 class="center">Programming</h2>
+                </a>
+                <a href="#interests">
+                    <h2 class="center">Interests</h2>
+                </a>
+                <a href="#contacts">
+                    <h2 class="center">Contacts</h2>
+                </a>
             </aside>
         </transition>
+
+        <main class="ui container">
+            <h1 class="center">Main text here</h1>
+            <div class="ui grid">
+                <div class="six wide center aligned column">
+                    <img class="ui centered medium circular image" src="src/patau.jpg">
+                </div>
+                <div class="ten wide center aligned column">
+                    <h1 class="">Yury Brusentsov</h1>
+                </div>
+            </div>
+            <div class="ui divider"></div>
+        </main>
+
     </div>
 
     <script src="model.js"></script>

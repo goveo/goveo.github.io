@@ -39,24 +39,6 @@ aside h2 {
 	color: #afafaf;
 }
 
-button {
-	background: transparent;
-	border: 0;
-	width: 40px;
-	height: 40px;
-	font-size: 30px;
-	outline: none;
-	color: #9f9f9f;
-	cursor: pointer;
-	border-right: 50%;
-	transition: all .3s easy-in-out;
-}
-
-button:active {
-	background-color: rgba(0, 0, 0, 0.1);
-}
-
-
 /* Анимация перехода */
 
 .slide-enter-active,
