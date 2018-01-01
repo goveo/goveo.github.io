@@ -12,8 +12,8 @@ header {
 	top: 0;
 	left: 0;
 	z-index: 80;
-	background-color: #fff;
-	box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.095);
+	background-color: rgba(255, 255, 255, 0);
+	/* box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.095); */
 	padding: 8px 16px;
 	overflow: hidden;
 	box-sizing: border-box;
@@ -27,10 +27,11 @@ aside {
 	left: 0;
 	bottom: 0px;
 	z-index: 1;
-	display: flex;
 	justify-content: center;
 	align-items: center;
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	margin-top: -56px;
+	padding-top: 56px;
 }
 
 aside h2 {
@@ -67,3 +68,17 @@ button:active {
 .slide-leave-active {
 	left: -100%;
 }
+
+.avatar {
+	border-radius: 1000px; /*make circle*/
+	box-shadow: 0 0 15px #666;
+	
+	width: 150px;
+	height: 150px;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	/* align horizontal */
+  }
