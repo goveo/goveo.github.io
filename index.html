@@ -20,7 +20,7 @@
         <header>
             <button class="ui icon button" @click="show = !show">
                 <div v-if="show">
-                    <i class="chevron left icon"></i>
+                    <i class="medium chevron left icon"></i>
                 </div>
                 <div v-else>
                     <i class="medium sidebar icon"></i>
@@ -46,53 +46,66 @@
             </aside>
         </transition>
 
-        <main class="ui container">
-            <div id="about" class="center block">
-                <div class="ui center aligned grid">
-                    <div class="six wide center aligned column">
-                        <img class="ui centered medium circular image" src="src/patau.jpg">
-                    </div>
-                    <div class="ten wide center middle aligned column">
-                        <h1>Yury Brusentsov</h1>
-                        <h4>Professional patau</h4>
+        <div class="ui grid">
+            
+            <main class="ui container" v-bind:class="{ 'ten wide center middle aligned column': show }">
+                <div id="about" class="center block">
+                    <div class="ui center aligned grid">
+                        <div class="six wide center aligned column">
+                            <img class="ui centered medium circular image" src="src/patau.jpg">
+                        </div>
+                        <div class="ten wide center middle aligned column">
+                            <h1>Yury Brusentsov</h1>
+                            <h4>Professional patau</h4>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="ui divider"></div>
+                <div class="ui divider"></div>
 
-            <div id="interests" class="center block">
-                <div class="ui center aligned grid">
-                    <div class="sixteen wide center aligned column">
-                        <h1>My interests</h1>
-                    </div>
+                <div id="interests" class="center block">
+                    <div class="ui center aligned grid">
+                        <div class="sixteen wide center aligned column">
+                            <h1>My interests</h1>
+                        </div>
 
-                    <div class="six wide center aligned column">
-                        <i class="huge code icon"></i>
-                    </div>
-                    <div class="ten wide center middle aligned column">
-                        <h2>Programming</h2>
-                    </div>
+                        <div class="six wide center aligned column">
+                            <i class="huge code icon"></i>
+                        </div>
+                        <div class="ten wide center middle aligned column">
+                            <h2>Programming</h2>
+                        </div>
 
-                    <div class="six wide center aligned column">
-                        <i class="huge game icon"></i>
-                    </div>
-                    <div class="ten wide center middle aligned column">
-                        <h2>Computer games</h2>
-                    </div>
+                        <div class="six wide center aligned column">
+                            <i class="huge game icon"></i>
+                        </div>
+                        <div class="ten wide center middle aligned column">
+                            <h2>Computer games</h2>
+                        </div>
 
-                    <div class="six wide center aligned column">
-                        <img src="src/beer.png" alt="beer icon" class="interestedIcon">
-                    </div>
-                    <div class="ten wide center middle aligned column">
-                        <h2>Beer</h2>
-                    </div>
+                        <div class="six wide center aligned column">
+                            <i class="ion-beer"></i>
+                        </div>
+                        <div class="ten wide center middle aligned column">
+                            <h2>Beer</h2>
+                        </div>
 
+                    </div>
                 </div>
-            </div>
-            <div class="ui divider"></div>
+                <div class="ui divider"></div>
+            </main>
 
-        </main>
-
+            <footer class="block">
+                <div class="ui container">
+                    <h1 class="ui header">Contacts</h1>
+                    <div class="align-left">
+                        <i class="big telegram icon"></i>
+                    </div>
+                    <div>
+                        <h3>@goveo</h3>
+                    </div>
+                </div>
+            </footer>
+        </div>
     </div>
 
     <script src="model.js"></script>

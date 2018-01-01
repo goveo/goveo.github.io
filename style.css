@@ -70,7 +70,15 @@ aside h2 {
 	margin-top: 56px;
 }
 
-.interestedIcon {
-	height: 56px;
-	width: 56px;
+.ion-beer {
+	font-size: 56px;
+}
+
+.align-right {
+	display: flex;
+	justify-content: right;
+}
+.align-left {
+	display: flex;
+	justify-content: left;
 }
