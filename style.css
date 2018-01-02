@@ -65,9 +65,13 @@ aside h2 {
 
 .block {
 	margin-top: 56px;
+	margin-bottom: 56px;
 }
 
 .ion-beer {
+	font-size: 56px;
+}
+.ion-university {
 	font-size: 56px;
 }
 
