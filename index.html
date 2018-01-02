@@ -19,7 +19,7 @@
 <body>
     <div id="app">
         <header>
-            <button class="ui icon button" id="sidebar-button" @click="show = !show">
+            <button class="ui icon button" id="sidebar-button" @click="changeSidebarState()">
                 <div v-if="show">
                     <i class="medium chevron left icon"></i>
                 </div>
@@ -33,39 +33,39 @@
             <!-- CONTENT OF PAGE -->
             <div class="four wide column">
                 <!-- <transition name="slide"> -->
-                    <aside id="sidebar" class="center aligned center" v-show="show">
-                        <div id="sidebar-items">
-                            <div class="sidebar-item">
-                                <a href="#about">
-                                    <h2>About</h2>
-                                </a>
-                            </div>
-                            <div class="sidebar-item">
-                                <a href="#interests">
-                                    <h2>Interests</h2>
-                                </a>
-                            </div>
-                            <div class="sidebar-item">
-                                <a href="#programming">
-                                    <h2>Programming</h2>
-                                </a>
-                            </div>
-                            <div class="sidebar-item">
-                                <a href="#contacts">
-                                    <h2>Contacts</h2>
-                                </a>
-                            </div>
+                <aside id="sidebar" class="center aligned center" v-show="show">
+                    <div id="sidebar-items">
+                        <div class="sidebar-item">
+                            <a href="#about">
+                                <h2>About</h2>
+                            </a>
                         </div>
-                    </aside>
+                        <div class="sidebar-item">
+                            <a href="#interests">
+                                <h2>Interests</h2>
+                            </a>
+                        </div>
+                        <div class="sidebar-item">
+                            <a href="#programming">
+                                <h2>Programming</h2>
+                            </a>
+                        </div>
+                        <div class="sidebar-item">
+                            <a href="#contacts">
+                                <h2>Contacts</h2>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
                 <!-- </transition> -->
             </div>
 
 
 
-            <div v-bind:class="{ 'twelve wide aligned column': show, 'sixteen wide aligned column': !show}">
+            <div v-bind:class="mainPageStyle">
                 <main class="container" id="main">
                     <transition name="slide">
-                    <div id="about" class="center block">
+                        <div id="about" class="center block">
                             <div class="ui center aligned grid">
                                 <div class="six wide center aligned column">
                                     <img class="ui centered medium circular image" id="avatar" src="src/patau.jpg">
@@ -119,7 +119,40 @@
                                 <h4>I have basic knowlage of:</h4>
                             </div>
 
-                            <div class="two wide center aligned column">
+                            <div class="sixteen wide center aligned column">
+                                <div class="ui text shape">
+                                    <div class="sides center">
+                                        <div class="ui header side active">
+                                            <h1 class="center">JavaScript</h1>
+                                        </div>
+                                        <div class="ui header side">
+                                            <h1 class="center">C</h1>
+                                        </div>
+                                        <div class="ui header side">
+                                            <h1 class="center">C++</h1>
+                                        </div>
+                                        <div class="ui header side">
+                                            <h1 class="center">C#</h1>
+                                        </div>
+                                        <div class="ui header side">
+                                            <h1 class="center">Java</h1>
+                                        </div>
+                                        <div class="ui header side">
+                                            <h1 class="center">Sho?</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sixteen wide center aligned column" @click="changeProgrammingLanguage()">
+                                <button class="ui button center">
+                                    <div class="center">
+                                        <i class="arrow right icon"></i>
+                                    </div>
+                                </button>
+                            </div>
+
+                            <!-- <div class="two wide center aligned column">
                                 <h2>C</h2>
                             </div>
                             <div class="two wide center aligned column">
@@ -136,7 +169,7 @@
                             </div>
                             <div class="two wide center aligned column">
                                 <h2></h2>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="ui divider block"></div>
@@ -180,7 +213,6 @@
         </div>
     </div>
     <script src="model.js"></script>
-    <script src="main.js"></script>
 </body>
 
 </html>

@@ -2,23 +2,29 @@ var app = new Vue({
     el: '#app',
     data: {
         show: false,
-        windowHeight: 0,
-        sidebarHeight: 0
+        mainPageStyle: 'sixteen wide aligned column'
     },
     created() {
-        window.addEventListener('resize', this.handleResize);
+        $('#main').transition('pulse');
     },
     methods: {
-        handleResize: _.throttle(function () {
-            console.log('Resized');
-            this.calculateSidebar();
-        }, 100),
-        calculateSidebar() {
-            app.sidebarHeight = $('#sidebar').innerHeight;
-            app.windowHeight = window.innerHeight;
-            console.log("sidebarHeight ", sidebarHeight);
-            console.log("windowHeight ", windowHeight);
-        }
+        changeSidebarState() {
+            console.log('sidebar state changed');
+            $('#sidebar').transition('slide right')
+            $('#main').transition('pulse');
+            if (app.show == true) {
+                app.mainPageStyle = 'sixteen wide aligned column';
+            } else {
+                app.mainPageStyle = 'twelve wide aligned column';
+            }
 
+            app.show = !app.show;
+        },
+        changeProgrammingLanguage() {
+            console.log('programming language changed');
+            $('.shape')
+                .shape('set next side', '.second.side')
+                .shape('flip right');
+        }
     }
 });
