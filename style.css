@@ -68,13 +68,9 @@ aside h2 {
 	margin-bottom: 56px;
 }
 
-.ion-beer {
+.ion-university, .ion-code-working, .ion-beer {
 	font-size: 56px;
 }
-.ion-university {
-	font-size: 56px;
-}
-
 .align-right {
 	display: flex;
 	justify-content: right;

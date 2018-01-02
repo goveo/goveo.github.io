@@ -51,6 +51,16 @@
                             </a>
                         </div>
                         <div class="sidebar-item">
+                            <a href="#projects">
+                                <h2>Projects</h2>
+                            </a>
+                        </div>
+                        <div class="sidebar-item">
+                            <a href="#university">
+                                <h2>University</h2>
+                            </a>
+                        </div>
+                        <div class="sidebar-item">
                             <a href="#contacts">
                                 <h2>Contacts</h2>
                             </a>
@@ -64,19 +74,17 @@
 
             <div v-bind:class="mainPageStyle">
                 <main class="container" id="main">
-                    <transition name="slide">
-                        <div id="about" class="center block">
-                            <div class="ui center aligned grid">
-                                <div class="six wide center aligned column">
-                                    <img class="ui centered medium circular image" id="avatar" src="src/patau.jpg">
-                                </div>
-                                <div class="ten wide center middle aligned column">
-                                    <h1>Yury Brusentsov</h1>
-                                    <h4>Professional patau</h4>
-                                </div>
+                    <div id="about" class="center block">
+                        <div class="ui center aligned grid">
+                            <div class="six wide center aligned column">
+                                <img src="src/patau.jpg" class="ui centered medium circular image" id="avatar">
+                            </div>
+                            <div class="ten wide center middle aligned column">
+                                <h1>Yury Brusentsov</h1>
+                                <h4>Professional patau</h4>
                             </div>
                         </div>
-                    </transition>
+                    </div>
                     <div class="ui divider"></div>
 
                     <div id="interests" class="center block">
@@ -92,7 +100,9 @@
                                     <i class="huge game icon"></i>
                                 </div>
                                 <div class="four wide center aligned column">
-                                    <i class="ion-beer"></i>
+                                    <div class="ui icon" data-tooltip="mmmmmm... pivo" data-inverted="">
+                                        <i class="ion-beer"></i>
+                                    </div>
                                 </div>
                             </div>
 
@@ -151,28 +161,52 @@
                                     </div>
                                 </button>
                             </div>
-
-                            <!-- <div class="two wide center aligned column">
-                                <h2>C</h2>
-                            </div>
-                            <div class="two wide center aligned column">
-                                <h2>C++</h2>
-                            </div>
-                            <div class="two wide center aligned column">
-                                <h2>C#</h2>
-                            </div>
-                            <div class="two wide center aligned column">
-                                <h2>Java</h2>
-                            </div>
-                            <div class="two wide center aligned column">
-                                <h2>JavaScript</h2>
-                            </div>
-                            <div class="two wide center aligned column">
-                                <h2></h2>
-                            </div> -->
                         </div>
                     </div>
                     <div class="ui divider block"></div>
+
+                    <div id="projects" class="center block">
+                        <div class="ui center aligned grid">
+                            <div class="sixteen wide center middle aligned column">
+                                <h1>Projects</h1>
+                            </div>
+                            <div class="sixteen wide center middle aligned column">
+                            </div>
+                            <div class="eight wide center middle aligned column">
+                                <h2>JumpingHeads</h2>
+                                <h3>Real time browser game</h3>
+                                <a href="http://jumpingheads.herokuapp.com/">
+                                    <h5>Link</h5>
+                                </a>
+                            </div>
+                            <div class="eight wide center middle aligned column">
+                                <h2>Other projects</h2>
+                                <h3>You can check on github</h3>
+                                <a href="http://jumpingheads.herokuapp.com/">
+                                    <h5>Link</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui divider"></div>
+
+                    <div id="university" class="center block">
+                        <div class="ui center aligned grid">
+                            <div class="sixteen wide center aligned column">
+                                <h1 class="center">University</h1>
+                            </div>
+                            <div class="middle-center">
+                                <i class="ion-university"></i>
+                            </div>
+                            <div class="row">
+                                <h2 class="middle-center">NTUU KPI</h2>
+                                <div class="sixteen wide center aligned column">
+                                    <h4>pls zaberite menya otsyuda</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui divider"></div>
 
                     <div id="contacts" class="center block">
                         <div class="ui center aligned grid">
