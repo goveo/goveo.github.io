@@ -19,7 +19,7 @@
 <body>
     <div id="app">
         <header>
-            <button class="ui icon button" @click="show = !show">
+            <button class="ui icon button" id="sidebar-button" @click="show = !show">
                 <div v-if="show">
                     <i class="medium chevron left icon"></i>
                 </div>
@@ -29,9 +29,10 @@
             </button>
         </header>
 
-        <transition name="slide">
-            <div class="ui grid">
-                <div class="four wide column">
+        <div class="ui grid">
+            <!-- CONTENT OF PAGE -->
+            <div class="four wide column">
+                <!-- <transition name="slide"> -->
                     <aside id="sidebar" class="center aligned center" v-show="show">
                         <div id="sidebar-items">
                             <div class="sidebar-item">
@@ -56,14 +57,15 @@
                             </div>
                         </div>
                     </aside>
-                </div>
+                <!-- </transition> -->
+            </div>
 
 
-                <!-- <transition name="slide"> -->
 
-                <div v-bind:class="{ 'twelve wide aligned column': show, 'sixteen wide aligned column': !show}">
-                    <main class="container">
-                        <div id="about" class="center block">
+            <div v-bind:class="{ 'twelve wide aligned column': show, 'sixteen wide aligned column': !show}">
+                <main class="container" id="main">
+                    <transition name="slide">
+                    <div id="about" class="center block">
                             <div class="ui center aligned grid">
                                 <div class="six wide center aligned column">
                                     <img class="ui centered medium circular image" id="avatar" src="src/patau.jpg">
@@ -74,108 +76,108 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="ui divider"></div>
+                    </transition>
+                    <div class="ui divider"></div>
 
-                        <div id="interests" class="center block">
-                            <div class="ui center aligned grid">
-                                <div class="sixteen wide center aligned column">
-                                    <h1 class="center">My interests</h1>
-                                </div>
-                                <div class="row">
-                                    <div class="four wide center aligned column">
-                                        <i class="huge code icon"></i>
-                                    </div>
-                                    <div class="four wide center aligned column">
-                                        <i class="huge game icon"></i>
-                                    </div>
-                                    <div class="four wide center aligned column">
-                                        <i class="ion-beer"></i>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="four wide center aligned column">
-                                        <h2>Programming</h2>
-                                    </div>
-                                    <div class="four wide center aligned column">
-                                        <h2>Computer games</h2>
-                                    </div>
-                                    <div class="four wide center aligned column">
-                                        <h2>Beer</h2>
-                                    </div>
-                                </div>
-
+                    <div id="interests" class="center block">
+                        <div class="ui center aligned grid">
+                            <div class="sixteen wide center aligned column">
+                                <h1 class="center">My interests</h1>
                             </div>
-                        </div>
-                        <div class="ui divider block"></div>
-
-                        <div id="programming" class="center block">
-                            <div class="ui center aligned grid">
-                                <div class="sixteen wide center aligned column">
-                                    <h1 class="center">Programming</h1>
-                                    <h4>I have basic knowlage of:</h4>
+                            <div class="row">
+                                <div class="four wide center aligned column">
+                                    <i class="huge code icon"></i>
                                 </div>
-
-                                <div class="two wide center aligned column">
-                                    <h2>C</h2>
+                                <div class="four wide center aligned column">
+                                    <i class="huge game icon"></i>
                                 </div>
-                                <div class="two wide center aligned column">
-                                    <h2>C++</h2>
-                                </div>
-                                <div class="two wide center aligned column">
-                                    <h2>C#</h2>
-                                </div>
-                                <div class="two wide center aligned column">
-                                    <h2>Java</h2>
-                                </div>
-                                <div class="two wide center aligned column">
-                                    <h2>JavaScript</h2>
-                                </div>
-                                <div class="two wide center aligned column">
-                                    <h2></h2>
+                                <div class="four wide center aligned column">
+                                    <i class="ion-beer"></i>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="four wide center aligned column">
+                                    <h2>Programming</h2>
+                                </div>
+                                <div class="four wide center aligned column">
+                                    <h2>Computer games</h2>
+                                </div>
+                                <div class="four wide center aligned column">
+                                    <h2>Beer</h2>
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="ui divider block"></div>
+                    </div>
+                    <div class="ui divider block"></div>
 
-                        <div id="contacts" class="center block">
-                            <div class="ui center aligned grid">
-                                <div class="fifteen wide center aligned column">
-                                    <h1 class="center">My contacts</h1>
-                                </div>
-                                <div class="row">
-                                    <div class="five wide center middle aligned column">
-                                        <i class="big telegram icon"></i>
-                                    </div>
-                                    <div class="five wide center middle aligned column">
-                                        <i class="big vk icon"></i>
-                                    </div>
-                                    <div class="five wide center middle aligned column">
-                                        <i class="big mail icon"></i>
-                                    </div>
-                                </div>
+                    <div id="programming" class="center block">
+                        <div class="ui center aligned grid">
+                            <div class="sixteen wide center aligned column">
+                                <h1 class="center">Programming</h1>
+                                <h4>I have basic knowlage of:</h4>
+                            </div>
 
-                                <div class="row">
-                                    <div class="five wide center middle aligned column">
-                                        <h3>@goveo</h3>
-                                    </div>
-                                    <div class="five wide center middle aligned column">
-                                        <h3>/goveo</h3>
-                                    </div>
-                                    <div class="five wide center middle aligned column">
-                                        <h3>yuriybrusentsov@gmail.com</h3>
-                                    </div>
-                                </div>
-
+                            <div class="two wide center aligned column">
+                                <h2>C</h2>
+                            </div>
+                            <div class="two wide center aligned column">
+                                <h2>C++</h2>
+                            </div>
+                            <div class="two wide center aligned column">
+                                <h2>C#</h2>
+                            </div>
+                            <div class="two wide center aligned column">
+                                <h2>Java</h2>
+                            </div>
+                            <div class="two wide center aligned column">
+                                <h2>JavaScript</h2>
+                            </div>
+                            <div class="two wide center aligned column">
+                                <h2></h2>
                             </div>
                         </div>
-                        <div class="ui divider block"></div>
+                    </div>
+                    <div class="ui divider block"></div>
 
-                    </main>
-                </div>
-                <!-- </transition> -->
+                    <div id="contacts" class="center block">
+                        <div class="ui center aligned grid">
+                            <div class="fifteen wide center aligned column">
+                                <h1 class="center">My contacts</h1>
+                            </div>
+                            <div class="row">
+                                <div class="five wide center middle aligned column">
+                                    <i class="big telegram icon"></i>
+                                </div>
+                                <div class="five wide center middle aligned column">
+                                    <i class="big vk icon"></i>
+                                </div>
+                                <div class="five wide center middle aligned column">
+                                    <i class="big mail icon"></i>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="five wide center middle aligned column">
+                                    <h3>@goveo</h3>
+                                </div>
+                                <div class="five wide center middle aligned column">
+                                    <h3>/goveo</h3>
+                                </div>
+                                <div class="five wide center middle aligned column">
+                                    <h3>yuriybrusentsov@gmail.com</h3>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="ui divider block"></div>
+
+
+                </main>
             </div>
-        </transition>
+        </div>
     </div>
     <script src="model.js"></script>
     <script src="main.js"></script>
