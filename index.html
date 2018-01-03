@@ -15,12 +15,16 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/tween.js@16.3.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/color-js@1.0.3"></script>
+
 </head>
 
 <body>
-    <div id="app">
+    
+    <div id="app" @scroll="onScroll">
         <header>
-            <button class="ui icon button" id="sidebar-button" @click="changeSidebarState()">
+            <button class="ui icon button" id="sidebar-button" @click="changeSidebarState">
                 <div v-if="show">
                     <i class="medium chevron left icon"></i>
                 </div>
@@ -30,7 +34,7 @@
             </button>
         </header>
 
-        <div class="ui center aligned grid">
+        <div class="ui center aligned grid" v-bind:style="{ backgroundColor: tweenedCSSColor }">
             <!-- CONTENT OF PAGE -->
 
             <div :class="sidebarStyle" id="sidebar">
@@ -154,7 +158,7 @@
                                 </div>
                             </div>
 
-                            <div class="sixteen wide center aligned column" @click="changeProgrammingLanguage()">
+                            <div class="sixteen wide center aligned column" @click="changeProgrammingLanguage">
                                 <button class="ui button center">
                                     <div class="center">
                                         <i class="arrow right icon"></i>
@@ -251,6 +255,7 @@
         </div>
         <!-- APP -->
     </div>
+
     <script src="model.js"></script>
 </body>
 
