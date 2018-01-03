@@ -2,7 +2,6 @@ var app = new Vue({
     el: '#app',
     data: {
         show: false,
-        mainStyle: 'sixteen wide column',
         sidebarStyle: 'zero wide column'
     },
     created() {
@@ -15,11 +14,8 @@ var app = new Vue({
             $('#sidebar').transition('fade right');
             
             if (app.show) {
-                
-                app.mainStyle = 'sixteen wide column';
-                app.sidebarStyle = 'zero wide column transition hidden';
+                app.sidebarStyle = 'zero wide column';
             } else {
-                app.mainStyle = 'twelve wide column';
                 app.sidebarStyle = 'four wide column';
             }
             
