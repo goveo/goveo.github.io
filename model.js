@@ -22,9 +22,7 @@ var app = new Vue({
         },
         changeProgrammingLanguage() {
             console.log('programming language changed');
-            $('.shape')
-                .shape('set next side', '.second.side')
-                .shape('flip right');
+            $('.shape').shape('flip right');
         }
     }
 });
