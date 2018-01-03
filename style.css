@@ -90,3 +90,11 @@ aside h2 {
 	position: relative;
 	align-items: center;
 }
+
+a {
+	color: black;
+}
+
+#main, #sidebar{
+	transition: width 0.3s ease, margin 0.3s ease;
+}

@@ -30,51 +30,49 @@
             </button>
         </header>
 
-        <div class="ui grid">
+        <div class="ui center aligned grid">
             <!-- CONTENT OF PAGE -->
-            <div class="four wide column">
-                <!-- <transition name="slide"> -->
-                <aside id="sidebar" class="center aligned center" v-show="show">
-                    <div id="sidebar-items">
-                        <div class="sidebar-item">
-                            <a href="#about">
-                                <h2>About</h2>
-                            </a>
+            <div :class="sidebarStyle" id="sidebar">
+                <transition name="slide">
+                    <aside class="center aligned center" v-show="show">
+                        <div id="sidebar-items">
+                            <div class="sidebar-item">
+                                <a href="#about">
+                                    <h2>About</h2>
+                                </a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#interests">
+                                    <h2>Interests</h2>
+                                </a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#programming">
+                                    <h2>Programming</h2>
+                                </a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#projects">
+                                    <h2>Projects</h2>
+                                </a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#university">
+                                    <h2>University</h2>
+                                </a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#contacts">
+                                    <h2>Contacts</h2>
+                                </a>
+                            </div>
                         </div>
-                        <div class="sidebar-item">
-                            <a href="#interests">
-                                <h2>Interests</h2>
-                            </a>
-                        </div>
-                        <div class="sidebar-item">
-                            <a href="#programming">
-                                <h2>Programming</h2>
-                            </a>
-                        </div>
-                        <div class="sidebar-item">
-                            <a href="#projects">
-                                <h2>Projects</h2>
-                            </a>
-                        </div>
-                        <div class="sidebar-item">
-                            <a href="#university">
-                                <h2>University</h2>
-                            </a>
-                        </div>
-                        <div class="sidebar-item">
-                            <a href="#contacts">
-                                <h2>Contacts</h2>
-                            </a>
-                        </div>
-                    </div>
-                </aside>
-                <!-- </transition> -->
+                    </aside>
+                </transition>
             </div>
 
-
-
-            <div v-bind:class="mainPageStyle">
-                <main class="container" id="main">
+            <main class="container">
+                <div :class="mainStyle" id="main">
                     <div id="about" class="center block">
                         <div class="ui center aligned grid">
                             <div class="six wide center aligned column">
@@ -228,10 +226,14 @@
 
                             <div class="row">
                                 <div class="five wide center middle aligned column">
-                                    <h3>@goveo</h3>
+                                    <a href="http://t.me/goveo">
+                                        <h3>@goveo</h3>
+                                    </a>
                                 </div>
                                 <div class="five wide center middle aligned column">
-                                    <h3>/goveo</h3>
+                                    <a href="http://vk.com/goveo">
+                                        <h3>/goveo</h3>
+                                    </a>
                                 </div>
                                 <div class="five wide center middle aligned column">
                                     <h3>yuriybrusentsov@gmail.com</h3>
@@ -241,10 +243,8 @@
                         </div>
                     </div>
                     <div class="ui divider block"></div>
-
-
-                </main>
-            </div>
+                </div>
+            </main>
         </div>
     </div>
     <script src="model.js"></script>
