@@ -95,6 +95,6 @@ a {
 	color: black;
 }
 
-#main, #sidebar{
-	transition: width 0.3s ease, margin 0.3s ease;
+#main, #sidebar {
+	transition: width 1s ease, margin 1s ease;
 }

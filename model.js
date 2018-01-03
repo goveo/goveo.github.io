@@ -5,7 +5,7 @@ var app = new Vue({
         sidebarStyle: 'zero wide column'
     },
     created() {
-        // $('#main').transition('pulse');
+        $('#main').transition('pulse');
     },
     methods: {
         changeSidebarState() {
@@ -18,19 +18,6 @@ var app = new Vue({
             } else {
                 app.sidebarStyle = 'four wide column';
             }
-            
-            // $('#main').toggleClass("sixteen wide column");
-            // $('#main').toggleClass("twelve wide column");
-            // $('#sidebar').toggleClass("zero wide column");
-            // $('#sidebar').toggleClass("four wide column");
-
-            // $('#sidebar').transition('slide right');
-            // $('#main').transition('pulse');
-            // if (app.show == true) {
-            //     app.mainPageStyle = 'sixteen wide aligned column';
-            // } else {
-            //     app.mainPageStyle = 'twelve wide aligned column';
-            // }
 
             app.show = !app.show;
         },
