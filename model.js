@@ -32,7 +32,8 @@ var app = new Vue({
             current: {},
             default: '#f5f5f5',
             sidebarOpened: '#c6c6c6'
-        }
+        },
+        activeSidebarLinkId: 'about'
     },
     created: function () {
         this.backgroundColor.current = Object.assign({}, this.backgroundColor.rgba);
@@ -52,8 +53,11 @@ var app = new Vue({
         onScroll: function (event) {
             let scroll = event.target.scrollTop + app.windowHeight / 2;
             let indexOfBlock = __findClosestBlockIndex(scroll, app.blocks.heights);
-            app.getBlockByIndex(indexOfBlock);
 
+            document.getElementById(this.activeSidebarLinkId).classList.remove("active");
+            this.activeSidebarLinkId = app.getBlockByIndex(indexOfBlock) + '-sidebar-link';
+            document.getElementById(this.activeSidebarLinkId).classList.add("active");
+            
             if (app.show) {
                 app.updateColor(app.backgroundColor.default);
             }
@@ -80,32 +84,42 @@ var app = new Vue({
             switch (index) {
                 case this.blocks.about:
                     console.log('about');
+                    return 'about';
                     break;
                 case this.blocks.interests:
                     console.log('interests');
+                    return 'interests';
                     break;
                 case this.blocks.programming:
                     console.log('programming');
+                    return 'programming';
                     break;
                 case this.blocks.projects:
                     console.log('projects');
+                    return 'projects';
                     break;
                 case this.blocks.university:
                     console.log('university');
+                    return 'university';
+                    break;
+                case this.blocks.contacts:
+                    console.log('contacts');
+                    return 'contacts';
                     break;
                 default:
-                    this.updateColor(app.backgroundColor.default);
+                return 'about';
             }
         },
         updateColor: function (toChange) {
             this.backgroundColor.rgba = new Color(toChange).toRGB();
         },
         scrollPage: function (toScrollIndex) {
-            console.log('toScrollIndex : ', toScrollIndex);
-
+            //scroll to block
             $('#app').animate({
                 scrollTop: app.blocks.heights[toScrollIndex] - 96
             }, 200);
+        },
+        setSidebarActive: function (activeIndex) {
 
         }
     },

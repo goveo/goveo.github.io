@@ -40,22 +40,22 @@
                     <aside class="center aligned center" v-show="show">
                         <div id="sidebar-items">
                             <a href="#about" @click="scrollPage('0')">
-                                <h2 class="sidebar-item">About</h2>
+                                <h2 id="about-sidebar-link" class="sidebar-item">About</h2>
                             </a>
                             <a href="#interests" @click="scrollPage('1')">
-                                <h2 class="sidebar-item">Interests</h2>
+                                <h2 id="interests-sidebar-link" class="sidebar-item">Interests</h2>
                             </a>
                             <a href="#programming" @click="scrollPage('2')">
-                                <h2 class="sidebar-item">Programming</h2>
+                                <h2 id="programming-sidebar-link" class="sidebar-item">Programming</h2>
                             </a>
                             <a href="#projects" @click="scrollPage('3')">
-                                <h2 class="sidebar-item">Projects</h2>
+                                <h2 id="projects-sidebar-link" class="sidebar-item">Projects</h2>
                             </a>
                             <a href="#university" @click="scrollPage('4')">
-                                <h2 class="sidebar-item">University</h2>
+                                <h2 id="university-sidebar-link" class="sidebar-item">University</h2>
                             </a>
                             <a href="#contacts" @click="scrollPage('5')">
-                                <h2 class="sidebar-item">Contacts</h2>
+                                <h2 id="contacts-sidebar-link" class="sidebar-item">Contacts</h2>
                             </a>
                         </div>
                     </aside>
@@ -202,6 +202,7 @@
                         <div class="ui center aligned grid">
                             <div class="fifteen wide center aligned column">
                                 <h1 class="center">My contacts</h1>
+                                <h4>You can find me here:</h4>
                             </div>
                             <div class="row">
                                 <div class="five wide center middle aligned column">
