@@ -39,6 +39,7 @@ var app = new Vue({
         this.backgroundColor.current = Object.assign({}, this.backgroundColor.rgba);
         this.updateColor(this.backgroundColor.default);
         $('#main').transition('pulse');
+        document.getElementById('about-sidebar-link').classList.add("active");
 
         this.windowHeight = $(window).height();
 
@@ -57,7 +58,7 @@ var app = new Vue({
             document.getElementById(this.activeSidebarLinkId).classList.remove("active");
             this.activeSidebarLinkId = app.getBlockByIndex(indexOfBlock) + '-sidebar-link';
             document.getElementById(this.activeSidebarLinkId).classList.add("active");
-            
+
             if (app.show) {
                 app.updateColor(app.backgroundColor.default);
             }
