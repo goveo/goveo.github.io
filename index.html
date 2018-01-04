@@ -3,20 +3,18 @@
 
 <head>
     <meta charset="utf-8">
-    <title>oveo</title>
     <link rel="icon" href="src/favicon.png" type="image/png">
+    <title>oveo</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tween.js@16.3.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/color-js@1.0.3"></script>
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/tween.js@16.3.4"></script>
-    <script src="https://cdn.jsdelivr.net/npm/color-js@1.0.3"></script>
 
 </head>
 
@@ -41,22 +39,22 @@
                 <transition name="slide">
                     <aside class="center aligned center" v-show="show">
                         <div id="sidebar-items">
-                            <a href="#about" @click="changeSidebarState">
+                            <a href="#about" @click="scrollPage('0')">
                                 <h2 class="sidebar-item">About</h2>
                             </a>
-                            <a href="#interests" @click="changeSidebarState">
+                            <a href="#interests" @click="scrollPage('1')">
                                 <h2 class="sidebar-item">Interests</h2>
                             </a>
-                            <a href="#programming" @click="changeSidebarState">
+                            <a href="#programming" @click="scrollPage('2')">
                                 <h2 class="sidebar-item">Programming</h2>
                             </a>
-                            <a href="#projects" @click="changeSidebarState">
+                            <a href="#projects" @click="scrollPage('3')">
                                 <h2 class="sidebar-item">Projects</h2>
                             </a>
-                            <a href="#university" @click="changeSidebarState">
+                            <a href="#university" @click="scrollPage('4')">
                                 <h2 class="sidebar-item">University</h2>
                             </a>
-                            <a href="#contacts" @click="changeSidebarState">
+                            <a href="#contacts" @click="scrollPage('5')">
                                 <h2 class="sidebar-item">Contacts</h2>
                             </a>
                         </div>

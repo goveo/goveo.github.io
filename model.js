@@ -38,7 +38,7 @@ var app = new Vue({
         this.backgroundColor.current = Object.assign({}, this.backgroundColor.rgba);
         this.updateColor(this.backgroundColor.default);
         $('#main').transition('pulse');
-    
+
         this.windowHeight = $(window).height();
 
         this.blocks.heights[this.blocks.about] = $('#about').offset().top;
@@ -99,6 +99,14 @@ var app = new Vue({
         },
         updateColor: function (toChange) {
             this.backgroundColor.rgba = new Color(toChange).toRGB();
+        },
+        scrollPage: function (toScrollIndex) {
+            console.log('toScrollIndex : ', toScrollIndex);
+
+            $('#app').animate({
+                scrollTop: app.blocks.heights[toScrollIndex] - 96
+            }, 200);
+
         }
     },
     watch: {
