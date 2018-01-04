@@ -23,18 +23,22 @@ var app = new Vue({
             ]
         },
         backgroundColor: {
-            color: {
+            rgba: {
                 red: 1,
                 green: 1,
                 blue: 1,
                 alpha: 1
             },
-            tweenedColor: {}
+            current: {},
+            default: '#f5f5f5',
+            sidebarOpened: '#c6c6c6'
         }
     },
     created: function () {
-        this.backgroundColor.tweenedColor = Object.assign({}, this.backgroundColor.color);
+        this.backgroundColor.current = Object.assign({}, this.backgroundColor.rgba);
+        this.updateColor(this.backgroundColor.default);
         $('#main').transition('pulse');
+        
 
         this.windowHeight = $(window).height();
 
@@ -54,6 +58,10 @@ var app = new Vue({
             let indexOfBlock = __findClosestBlock(scroll, app.blocks.heights);
             app.getBlockByIndex(indexOfBlock);
 
+            if (app.show) {
+                app.updateColor(app.backgroundColor.default);
+            }
+
         },
         changeSidebarState: function () {
             console.log('sidebar state changed');
@@ -62,8 +70,10 @@ var app = new Vue({
 
             if (app.show) {
                 app.sidebarStyle = 'zero wide column';
+                app.updateColor(app.backgroundColor.default);
             } else {
                 app.sidebarStyle = 'four wide column';
+                app.updateColor(app.backgroundColor.sidebarOpened);
             }
 
             app.show = !app.show;
@@ -74,46 +84,45 @@ var app = new Vue({
         getBlockByIndex: function (index) {
             switch (index) {
                 case this.blocks.about:
-                    console.log('about');
+                    // console.log('about');
                     // this.changeBackgroundColor();
-                    this.updateColor('white');
+                    // this.updateColor('white');
 
                     break;
                 case this.blocks.interests:
                     console.log('interests');
-                    this.updateColor('#f5f5f5');
                     break;
                 case this.blocks.programming:
                     console.log('programming');
-                    app.updateColor('#ededed');
                     break;
                 case this.blocks.projects:
                     console.log('projects');
-                    app.updateColor('#e0e0e0');
                     break;
                 case this.blocks.university:
                     console.log('university');
-                    app.updateColor('#d6d6d6');
                     break;
                 default:
-                    console.log('KABOOOO?');
+                    this.updateColor(app.backgroundColor.default);
             }
         },
         updateColor: function (toChange) {
-            console.log('toChange : ', toChange);
-            this.backgroundColor.color = new Color(toChange).toRGB();
+            this.backgroundColor.rgba = new Color(toChange).toRGB();
+            console.log('this.backgroundColor.rgba : ', this.backgroundColor.rgba);
+        },
+        changeColorByBlock: function (index) {
+            
         }
     },
     watch: {
-        color : function () {
+        color: function () {
             function animate() {
                 if (TWEEN.update()) {
                     requestAnimationFrame(animate)
                 }
             }
 
-            new TWEEN.Tween(app.backgroundColor.tweenedColor)
-                .to(app.backgroundColor.color, 750)
+            new TWEEN.Tween(app.backgroundColor.current)
+                .to(app.backgroundColor.rgba, 750)
                 .start();
 
             animate();
@@ -122,14 +131,14 @@ var app = new Vue({
     computed: {
         tweenedCSSColor: function () {
             return new Color({
-                red: this.backgroundColor.tweenedColor.red,
-                green: this.backgroundColor.tweenedColor.green,
-                blue: this.backgroundColor.tweenedColor.blue,
-                alpha: this.backgroundColor.tweenedColor.alpha
+                red: this.backgroundColor.current.red,
+                green: this.backgroundColor.current.green,
+                blue: this.backgroundColor.current.blue,
+                alpha: this.backgroundColor.current.alpha
             }).toCSS();
         },
-        color: function() {
-            return this.backgroundColor.color;
+        color: function () {
+            return this.backgroundColor.rgba;
         }
     }
 });
