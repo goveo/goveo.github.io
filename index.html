@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    
+
     <div id="app" @scroll="onScroll">
         <header>
             <button class="ui icon button" id="sidebar-button" @click="changeSidebarState">
@@ -34,43 +34,31 @@
             </button>
         </header>
 
-        <div class="ui center aligned grid" v-bind:style="{ backgroundColor: tweenedCSSColor }">
+        <div class="ui center aligned grid" v-bind:style="{ backgroundColor: currentBackgroundColor }">
             <!-- CONTENT OF PAGE -->
 
             <div :class="sidebarStyle" id="sidebar">
                 <transition name="slide">
                     <aside class="center aligned center" v-show="show">
                         <div id="sidebar-items">
-                            <div class="sidebar-item">
-                                <a href="#about">
-                                    <h2>About</h2>
-                                </a>
-                            </div>
-                            <div class="sidebar-item">
-                                <a href="#interests">
-                                    <h2>Interests</h2>
-                                </a>
-                            </div>
-                            <div class="sidebar-item">
-                                <a href="#programming">
-                                    <h2>Programming</h2>
-                                </a>
-                            </div>
-                            <div class="sidebar-item">
-                                <a href="#projects">
-                                    <h2>Projects</h2>
-                                </a>
-                            </div>
-                            <div class="sidebar-item">
-                                <a href="#university">
-                                    <h2>University</h2>
-                                </a>
-                            </div>
-                            <div class="sidebar-item">
-                                <a href="#contacts">
-                                    <h2>Contacts</h2>
-                                </a>
-                            </div>
+                            <a href="#about" @click="changeSidebarState">
+                                <h2 class="sidebar-item">About</h2>
+                            </a>
+                            <a href="#interests" @click="changeSidebarState">
+                                <h2 class="sidebar-item">Interests</h2>
+                            </a>
+                            <a href="#programming" @click="changeSidebarState">
+                                <h2 class="sidebar-item">Programming</h2>
+                            </a>
+                            <a href="#projects" @click="changeSidebarState">
+                                <h2 class="sidebar-item">Projects</h2>
+                            </a>
+                            <a href="#university" @click="changeSidebarState">
+                                <h2 class="sidebar-item">University</h2>
+                            </a>
+                            <a href="#contacts" @click="changeSidebarState">
+                                <h2 class="sidebar-item">Contacts</h2>
+                            </a>
                         </div>
                     </aside>
                 </transition>

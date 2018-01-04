@@ -37,14 +37,12 @@ aside {
 	align-items: center;
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 	margin-top: -56px;
-	padding: 4rem;
-	/* padding-left: 50px; */
-	/* padding-right: 50px;	 */
+	/* padding: 4rem; */
 }
 
 aside h2 {
 	font-weight: 300;
-	color: #afafaf;
+	color: black
 }
 
 .slide-enter-active,
@@ -93,7 +91,21 @@ aside h2 {
 }
 
 .sidebar-item {
-	margin-bottom: 30px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 30px;
+	padding-right: 30px;
+
+}
+
+.sidebar-item:hover {
+	-webkit-transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -o-transition: background-color 1s;
+	transition: background-color 1s;
+
+	background-color: rgba(0, 0, 0, 0.36);
+	color: white;
 }
 
 #sidebar-items {
@@ -111,8 +123,8 @@ a {
 	transition: width 1s ease, margin 1s ease;
 }
 
-.example-7-color-preview {
-	display: inline-block;
-	width: 50px;
-	height: 50px;
+.active.sidebar-item {
+	background-color: #afafaf;
+	color: white;
 }
+

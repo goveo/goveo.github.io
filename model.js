@@ -38,8 +38,7 @@ var app = new Vue({
         this.backgroundColor.current = Object.assign({}, this.backgroundColor.rgba);
         this.updateColor(this.backgroundColor.default);
         $('#main').transition('pulse');
-        
-
+    
         this.windowHeight = $(window).height();
 
         this.blocks.heights[this.blocks.about] = $('#about').offset().top;
@@ -48,14 +47,11 @@ var app = new Vue({
         this.blocks.heights[this.blocks.projects] = $('#projects').offset().top;
         this.blocks.heights[this.blocks.university] = $('#university').offset().top;
         this.blocks.heights[this.blocks.contacts] = $('#contacts').offset().top;
-
-        console.log(this.blocks.heights);
-        console.log(this.windowHeight);
     },
     methods: {
         onScroll: function (event) {
             let scroll = event.target.scrollTop + app.windowHeight / 2;
-            let indexOfBlock = __findClosestBlock(scroll, app.blocks.heights);
+            let indexOfBlock = __findClosestBlockIndex(scroll, app.blocks.heights);
             app.getBlockByIndex(indexOfBlock);
 
             if (app.show) {
@@ -75,7 +71,6 @@ var app = new Vue({
                 app.sidebarStyle = 'four wide column';
                 app.updateColor(app.backgroundColor.sidebarOpened);
             }
-
             app.show = !app.show;
         },
         changeProgrammingLanguage: function () {
@@ -84,10 +79,7 @@ var app = new Vue({
         getBlockByIndex: function (index) {
             switch (index) {
                 case this.blocks.about:
-                    // console.log('about');
-                    // this.changeBackgroundColor();
-                    // this.updateColor('white');
-
+                    console.log('about');
                     break;
                 case this.blocks.interests:
                     console.log('interests');
@@ -107,14 +99,10 @@ var app = new Vue({
         },
         updateColor: function (toChange) {
             this.backgroundColor.rgba = new Color(toChange).toRGB();
-            console.log('this.backgroundColor.rgba : ', this.backgroundColor.rgba);
-        },
-        changeColorByBlock: function (index) {
-            
         }
     },
     watch: {
-        color: function () {
+        rgba: function () {
             function animate() {
                 if (TWEEN.update()) {
                     requestAnimationFrame(animate)
@@ -129,7 +117,7 @@ var app = new Vue({
         }
     },
     computed: {
-        tweenedCSSColor: function () {
+        currentBackgroundColor: function () {
             return new Color({
                 red: this.backgroundColor.current.red,
                 green: this.backgroundColor.current.green,
@@ -137,14 +125,14 @@ var app = new Vue({
                 alpha: this.backgroundColor.current.alpha
             }).toCSS();
         },
-        color: function () {
+        rgba: function () {
             return this.backgroundColor.rgba;
         }
     }
 });
 
 
-const __findClosestBlock = function (number, data) {
+const __findClosestBlockIndex = function (number, data) {
     let closest,
         current,
         closestIndex;
