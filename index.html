@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <link rel="icon" href="src/favicon.png" type="image/png">
     <title>oveo</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
@@ -15,12 +15,12 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
     <div id="app" @scroll="onScroll">
+
         <header>
             <button class="ui icon button" id="sidebar-button" @click="changeSidebarState">
                 <div v-if="show">
@@ -39,23 +39,23 @@
                 <transition name="slide">
                     <aside class="center aligned center" v-show="show">
                         <div id="sidebar-items">
-                            <a href="#about" @click="scrollPage('0')">
-                                <h2 id="about-sidebar-link" class="sidebar-item">About</h2>
+                            <a href="#about">
+                                <h2 id="about-sidebar-link" @click="changeSidebarState" class="sidebar-item">About</h2>
                             </a>
-                            <a href="#interests" @click="scrollPage('1')">
-                                <h2 id="interests-sidebar-link" class="sidebar-item">Interests</h2>
+                            <a href="#interests">
+                                <h2 id="interests-sidebar-link" @click="changeSidebarState" class="sidebar-item">Interests</h2>
                             </a>
-                            <a href="#programming" @click="scrollPage('2')">
-                                <h2 id="programming-sidebar-link" class="sidebar-item">Programming</h2>
+                            <a href="#programming">
+                                <h2 id="programming-sidebar-link" @click="changeSidebarState" class="sidebar-item">Programming</h2>
                             </a>
-                            <a href="#projects" @click="scrollPage('3')">
-                                <h2 id="projects-sidebar-link" class="sidebar-item">Projects</h2>
+                            <a href="#projects">
+                                <h2 id="projects-sidebar-link" @click="changeSidebarState" class="sidebar-item">Projects</h2>
                             </a>
-                            <a href="#university" @click="scrollPage('4')">
-                                <h2 id="university-sidebar-link" class="sidebar-item">University</h2>
+                            <a href="#university">
+                                <h2 id="university-sidebar-link" @click="changeSidebarState" class="sidebar-item">University</h2>
                             </a>
-                            <a href="#contacts" @click="scrollPage('5')">
-                                <h2 id="contacts-sidebar-link" class="sidebar-item">Contacts</h2>
+                            <a href="#contacts">
+                                <h2 id="contacts-sidebar-link" @click="changeSidebarState" class="sidebar-item">Contacts</h2>
                             </a>
                         </div>
                     </aside>
@@ -120,7 +120,7 @@
                             </div>
 
                             <div class="sixteen wide center aligned column">
-                                <div class="ui text shape">
+                                <div class="ui center text shape">
                                     <div class="sides center">
                                         <div class="ui header side active">
                                             <h1 class="center">JavaScript</h1>
